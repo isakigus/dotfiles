@@ -1,0 +1,64 @@
+#!/bin/bash
+
+HOME_SW=/home/isaac/store/software
+HOME_DEV=/media/isaac/store/dev
+
+alias rl='. ~/.bashrc'
+alias rmd='rm -rf'
+alias vol='pavucontrol'
+alias opengus='vim ~/.gusinit'
+alias sound='pavucontrol'
+alias cl='clear'
+alias dev='cd /media/isaac/store/dev'
+alias store='cd /media/isaac/store'
+alias awe='sudo vim /etc/xdg/awesome/rc.lua'
+alias i3c='sudo vim ~/.i3/config'
+alias bye='echo "bye bye!" && poweroff'
+alias logout='sudo pkill -u isaac'
+alias keys='grep awful.key /etc/xdg/awesome/rc.lua'
+
+alias bmath=$HOME_SW'/bmath_1.2.2_Release_05_03_09.35/bmath_1.2.2_Release.x86_64'
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source ~/.rvm/scripts/rvm
+
+# vpn forticlient
+alias vpn='sudo /opt/forticlient-sslvpn/forticlientsslvpn.sh'
+
+export PS1="\u:\w\n✪►► "
+
+# git alias
+alias gd='git diff'
+alias gc='git commit -m'
+alias ga='git add'
+alias gp='git push'
+alias gco='git checkout '
+alias gis='git status '
+
+
+RABBIT_HOST=172.104.132.237
+alias srabbit='sshpass -p "*****" ssh -v root@'$RABBIT_HOST
+alias rab='sshpass -p "****" ssh -v rabbit@'$RABBIT_HOST
+
+
+# shorcut para aumentar o disminuir brillo
+alias bup='xbacklight -inc 10'
+alias bdw='xbacklight -dec 10'
+
+#shortcut para aumentar o disminuir el volumen
+alias vup="amixer set 'Master' 10%+"
+alias vdw="amixer set 'Master' 10%-"
+
+source $HOME/.cargo/env
+
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+
+
+if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
